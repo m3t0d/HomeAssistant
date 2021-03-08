@@ -1,2 +1,2 @@
 # HomeAssistant
-HomeAssistant
+HomeAssistant folder
