@@ -1,4 +1,4 @@
 # HomeAssistant
 HomeAssistant folder
 
-Place for HA stuff.
+Place for HA stuff..
