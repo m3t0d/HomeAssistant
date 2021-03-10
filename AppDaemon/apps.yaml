@@ -1,1 +1,13 @@
-#
+LPPB600011:
+  module: LPP
+  class: LPP_bus
+  stationID: 600011
+  lines:
+    - 02
+    - 03G
+    - 06B
+    - 08
+    - 11
+    - 14
+    - 19B
+    - 19L
