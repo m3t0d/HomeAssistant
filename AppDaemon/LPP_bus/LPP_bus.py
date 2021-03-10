@@ -2,9 +2,21 @@ import appdaemon.plugins.hass.hassapi as hass
 import requests
 import json
 import datetime
-#All needed data from:
-# https://prominfo.projekti.si/web/
-#  
+#Data from: https://prominfo.projekti.si/web/
+#Here you can find stationID, line numbers
+#
+#
+#json location for sttion 600011(Bavarski dvor)
+#https://prominfo.projekti.si/lpp_rc/api/600011
+#Arguments in apps.yaml
+#stationID: station ID from above URL
+#refreshinterval: in seconds
+#lines:  line nimbers (not numbers at all, but..)
+#  - 02
+#  - 07
+#  - 07L
+#
+
 class LPP_bus(hass.Hass):
     def initialize(self):
         self.log("Hello from LPP.py for station " + str(self.args["stationID"]))
@@ -25,21 +37,22 @@ class LPP_bus(hass.Hass):
                 attributes={"friendly_name":str(station)} )
 
             for line in self.args["lines"]:
-                #sensofs from list prepared with default vaues
+                #sensors from argument list prepared with default vaues
                 self.set_state("sensor.lpp" + str(stationID) +'bus' + str(line).zfill(2),state=" ",\
                         attributes={"friendly_name" : str(line).zfill(2)} ) 
         
+        #initial data retrival
         self.getBusData(self)
-        #run refresh every time frame (3*60 sec default)
-        #        
-        self.minute = self.run_every(self.getBusData, timer, 3*60 )
+        #run refresh every refreshinterval (make no sense less then 60)
+        refresh = self.args["refreshinterval"]  
+        self.minute = self.run_every(self.getBusData, timer, refresh )
         
     def getBusData(self,kvargs):
         stationID = self.args["stationID"]
         #url for json data
         url="https://prominfo.projekti.si/lpp_rc/api/"+str(stationID)
         response = requests.get(url)
-        #response = requests.get("https://prominfo.projekti.si/lpp_rc/api/203101")
+        
         if response.status_code != requests.codes.ok:
             #no json data retrieved
             self.log("Something went wrong with internet data ")
@@ -49,10 +62,13 @@ class LPP_bus(hass.Hass):
             sensorsLPP = []
             linesLPP = []
             #prepare list of sensors and lines
+        
             for line in self.args["lines"]:
                 sensorsLPP.append('sensor.lpp' + str(stationID) + 'bus'+str(line).zfill(2))
                 linesLPP.append(str(line).zfill(2))
-            #prepare arrivals for bus lines for sensor data    
+            #prepare arrivals for bus lines for sensor data
+            #format output: first bus in minutes (next bus)   
+        
             for i in stationData['arrivals']:
                 busID = i['busId']
                 busNAME = i['busNameTo']
@@ -71,8 +87,9 @@ class LPP_bus(hass.Hass):
                     self.set_state("sensor.lpp" + str(stationID) +'bus' + str(busID),state=out,\
                         attributes={"friendly_name" : str(busID) + ' '+ busNAME} )
                     linesLPP.remove(str(busID))
-             
+     
             #if bus data unavaible set sensor value to N/A  
+            #some lines are not 24/7
             for i in linesLPP: 
                 old_name=self.get_state("sensor.lpp" + str(stationID) +'bus' + str(i),attribute='friendly_name')
                 self.set_state("sensor.lpp" + str(stationID) +'bus' + str(i),state="N/A",\

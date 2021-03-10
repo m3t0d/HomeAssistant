@@ -1,1 +1,11 @@
-#
+LPP_bus:
+  module: LPP_bus
+  class: LPP_bus
+  stationID: 600011
+  refreshinterval: 180  
+  lines:
+    - 02
+    - 03G
+    - 06B
+    - 08
+    - 11
