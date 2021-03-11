@@ -1,7 +1,26 @@
 ### LPP_bus
 
 AppDaemon skripta pridobiva podatke s spleta, ustvari senzorje in osvežuje podatke o prihodih 
-v definiranih intervalih.
-Uporabljajo se podatki s spletne strani https://prominfo.projekti.si/
-Na tej speltni strani najdete podatke o postaji (stationID) in podatke o avtobusnih linijah na teh postajah.
-[this subtext](LPP_bus/apps.yaml)
+v definiranih intervalih.\
+Uporabljajo se podatki s spletne strani https://prominfo.projekti.si/ \
+Na tej spletni strani najdete podatke o postaji (stationID) in podatke o avtobusnih linijah na teh postajah.\
+Sprotini podatki so na povezavi https://prominfo.projekti.si/lpp_rc/api/stationID \
+Primer: \
+600011(Bavarski dvor), stationID je 600011\
+https://prominfo.projekti.si/lpp_rc/api/600011\
+apps.yaml [apps.yaml](LPP_bus/apps.yaml)ima naslednje argumente: \
+stationID: station ID, pridobljen iz zgornje lokacije
+```
+stationID: 600011
+```
+refreshinterval: in seconds, osvežitev podatkov, nesmiselno je uporabljati manj kot 60, podatki se osvežujejo na minuto
+```
+refreshinterval: 180 
+```
+lines:  številke avtobusnih linij (niso samo številke...) 
+```
+lines:
+  - 02
+  - 07
+  - 07L
+```
