@@ -8,7 +8,7 @@ Sprotini podatki so na povezavi https://prominfo.projekti.si/lpp_rc/api/stationI
 Primer: \
 600011(Bavarski dvor), stationID je 600011\
 https://prominfo.projekti.si/lpp_rc/api/600011 \
-[apps.yaml](LPP_bus/apps.yaml)ima naslednje argumente: \
+[apps.yaml](apps.yaml) ima naslednje argumente: \
 stationID: station ID, pridobljen iz zgornje lokacije
 ```
 stationID: 600011
