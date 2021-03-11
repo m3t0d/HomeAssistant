@@ -28,12 +28,14 @@ lines:
 <br> 
 
 [V skripti](LPP_bus.py) so ustvarjeni senzorji: \
-sensor.lppstationID
+senzor za avtobusno postajo:\
+`sensor.lppstationID`
  - senzor z IDjem postaje (sensor.lpp600011) 
+
 <br> 
 
-senzorji za avtobusne linije:
-sensor.lppstationIDbusNr
+senzorji za avtobusne linije: \
+`sensor.lppstationIDbusNr`
  - senzor za posamezno linijo (sensor.lpp600011bus07) 
 
  
