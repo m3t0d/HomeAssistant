@@ -8,6 +8,7 @@ Sprotini podatki so na povezavi https://prominfo.projekti.si/lpp_rc/api/stationI
 Primer: \
 600011(Bavarski dvor), stationID je 600011\
 https://prominfo.projekti.si/lpp_rc/api/600011 \
+<br>
 [apps.yaml](apps.yaml) ima naslednje argumente: \
 stationID: station ID, pridobljen iz zgornje lokacije
 ```
@@ -24,3 +25,16 @@ lines:
   - 07
   - 07L
 ```
+<br> 
+V [skripti](LPP_bus.py) so ustvarjeni senzorji: \
+sensor.lppstationID
+ - senzor z IDjem postaje (sensor.lpp600011) 
+<br> 
+senzorji za avtobusne linije:
+sensor.lppstationIDbusNr
+ - senzor za posamezno linijo (sensor.lpp600011bus07) 
+
+ 
+<br> 
+<br> 
+ ** Za spremljanje več postaj je potrebno v apps.yaml zagnati več instanc skripte z drugimi parametri. **
