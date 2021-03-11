@@ -2,7 +2,7 @@
 
 
 
-## LPP_bus - script to track LPP arrivals on bus station station (Slovene description only)
+## [LPP_bus](LPP_bus/README.md) - script to track LPP arrivals on bus station (Slovene description only)
 
 AppDaemon skripta pridobiva podatke s spleta, ustvari senzorje in osvežuje podatke o prihodih 
 v definiranih intervalih.
