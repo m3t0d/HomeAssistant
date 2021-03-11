@@ -26,10 +26,12 @@ lines:
   - 07L
 ```
 <br> 
-V [skripti](LPP_bus.py) so ustvarjeni senzorji: \
+
+[V skripti](LPP_bus.py) so ustvarjeni senzorji: \
 sensor.lppstationID
  - senzor z IDjem postaje (sensor.lpp600011) 
 <br> 
+
 senzorji za avtobusne linije:
 sensor.lppstationIDbusNr
  - senzor za posamezno linijo (sensor.lpp600011bus07) 
@@ -37,4 +39,5 @@ sensor.lppstationIDbusNr
  
 <br> 
 <br> 
- ** Za spremljanje več postaj je potrebno v apps.yaml zagnati več instanc skripte z drugimi parametri. **
+
+ **Za spremljanje več postaj je potrebno v apps.yaml zagnati več instanc skripte z drugimi parametri.**
