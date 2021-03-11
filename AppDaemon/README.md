@@ -8,4 +8,4 @@ AppDaemon skripta pridobiva podatke s spleta, ustvari senzorje in osvežuje poda
 v definiranih intervalih.
 Uporabljajo se podatki s spletne strani https://prominfo.projekti.si/
 Na tej speltni strani najdete podatke o postaji (stationID) in podatke o avtobusnih linijah na teh postajah.
-[this subtext](subpro/subtext.md)
+[this subtext](LPP_bus/apps.yaml)
