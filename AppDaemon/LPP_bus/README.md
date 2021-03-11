@@ -32,7 +32,7 @@ senzor za avtobusno postajo:\
 `sensor.lppstationID`
  - senzor z IDjem postaje (sensor.lpp600011) 
 
-<br> 
+
 
 senzorji za avtobusne linije: \
 `sensor.lppstationIDbusNr`
