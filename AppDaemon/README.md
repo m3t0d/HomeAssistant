@@ -1,4 +1,4 @@
-# HomeAssistant
-HomeAssistant folder
+# AppDaemon scripts
 
-Place for HA stuff.
+
+Place for AppDaemon stuff.
