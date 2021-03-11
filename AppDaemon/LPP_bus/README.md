@@ -7,8 +7,8 @@ Na tej spletni strani najdete podatke o postaji (stationID) in podatke o avtobus
 Sprotini podatki so na povezavi https://prominfo.projekti.si/lpp_rc/api/stationID \
 Primer: \
 600011(Bavarski dvor), stationID je 600011\
-https://prominfo.projekti.si/lpp_rc/api/600011\
-apps.yaml [apps.yaml](LPP_bus/apps.yaml)ima naslednje argumente: \
+https://prominfo.projekti.si/lpp_rc/api/600011 \
+[apps.yaml](LPP_bus/apps.yaml)ima naslednje argumente: \
 stationID: station ID, pridobljen iz zgornje lokacije
 ```
 stationID: 600011
