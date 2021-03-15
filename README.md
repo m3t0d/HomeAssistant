@@ -52,38 +52,7 @@ Lahko ap seveda dodamo ai pa zamenjamo poljuben atribut.
       unit_of_measurement: "%"    
 ```
 
+Primer sensor.yaml
 <br>
-[sensor.yaml](apps.yaml) ima naslednje argumente: \
-stationID: station ID, pridobljen iz zgornje lokacije
-```
-stationID: 600011
-```
-refreshinterval: in seconds, osvežitev podatkov, nesmiselno je uporabljati manj kot 60, podatki se osvežujejo na minuto
-```
-refreshinterval: 180 
-```
-lines:  številke avtobusnih linij (niso samo številke...) 
-```
-lines:
-  - 02
-  - 07
-  - 07L
-```
-<br> 
 
-[V skripti](LPP_bus.py) so ustvarjeni senzorji: \
-senzor za avtobusno postajo:\
-`sensor.lppstationID`
- - senzor z IDjem postaje (sensor.lpp600011) 
-
-
-
-senzorji za avtobusne linije: \
-`sensor.lppstationIDbusNr`
- - senzor za posamezno linijo (sensor.lpp600011bus07) 
-
- 
-<br> 
-<br> 
-
- **Za spremljanje več postaj je potrebno v apps.yaml zagnati več instanc skripte z drugimi parametri.**
+[sensor.yaml](ARSOvreme/sensor..yaml) 
