@@ -1,0 +1,28 @@
+#ARSO podatki vremenska postaja, rest sensor.
+- platform: rest
+  scan_interval: 3600
+  name: arsovremelj
+  resource: http://meteo.arso.gov.si/uploads/probase/www/observ/surface/text/sl/observation_LJUBL-ANA_BEZIGRAD_latest.xml
+  json_attributes_path: "$.*.metData"
+  json_attributes:
+    - t
+    - nn_shortText
+    - dd_longText
+    - msl
+    - rh
+  value_template: '{{ states.sensor.arsovremelj.attributes["nn_shortText"] }}'
+- platform: template
+  sensors:
+    arsotemperaturalj:
+      value_template: '{{ states.sensor.arsovremelj.attributes["t"] }}'
+      device_class: temperature
+      unit_of_measurement: "°C"
+    arsoveterlj:
+      value_template: '{{ states.sensor.arsovremelj.attributes["dd_longText"] }}'
+    arsopritisklj:
+      value_template: '{{ states.sensor.arsovremelj.attributes["msl"] }}'
+      unit_of_measurement: "hP"
+    arsovlagalj:
+      value_template: '{{ states.sensor.arsovremelj.attributes["rh"] }}'
+      device_class: humidity
+      unit_of_measurement: "%"    
