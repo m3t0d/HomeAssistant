@@ -27,7 +27,7 @@ Dodati je potrebo senzor v configuration.yaml ali v sensor.yaml (odvisno ali so 
   value_template: '{{ states.sensor.arsovremelj.attributes["nn_shortText"] }}'
 ```
 Kaj so posamezni atributi lahko ugotovite iz same datoteke in potrebne atribute dodate v listo atributov.
-V tem primeru uporabljamo za vrednost "nn_shortText" kar je z besedo opisano trenutno vreme.\
+V tem primeru uporabljamo za vrednost atributa "nn_shortText" kar je z besedo opisano trenutno vreme.\
 Ostali atributi ki nas zanimajo postanejno atributi stanja ustvarjenega senzorja.\
 Nato s template senzorjem poiščemo te atribute in vrednost dodamo novo ustvarjenim senzorjem. \
 V primeru so to temperatura, smer vetra, pritisk in vlaga. \
@@ -55,4 +55,4 @@ Lahko pa seveda dodamo ali pa zamenjamo poljuben atribut.
 
 <br>
 
-[Primer sensor.yaml](ARSOvreme/sensor..yaml) 
+[Primer sensor.yaml](ARSOvreme/sensor.yaml) 
