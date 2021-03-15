@@ -1,5 +1,6 @@
 # HomeAssistant
-HomeAssistant stuff.
+
+## [AppDaemon](AppDaemon/README.md) 
 
 ### ARSO vreme
 
