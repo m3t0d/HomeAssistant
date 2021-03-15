@@ -1,6 +1,7 @@
 # HomeAssistant
 
 ## [AppDaemon](AppDaemon/README.md) 
+LPP_bus: podatki o prihodih mestnih avtobusov na postajo
 
 ### ARSO vreme
 
