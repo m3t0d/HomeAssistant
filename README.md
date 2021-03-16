@@ -6,7 +6,7 @@ LPP_bus: podatki o prihodih mestnih avtobusov na postajo
 ### ARSO vreme
 
 REST senzor pridobiva podatke iz strani Agencije Republike Slovenije za Okolje https://www.arso.gov.si/ \
-Poatrki so na strani https://meteo.arso.gov.si/met/sl/service/ v XML obliki, osvežujejo se vsako uro. \
+Podatki so na strani https://meteo.arso.gov.si/met/sl/service/ v XML obliki, osvežujejo se vsako uro. \
 Uporabijo se lahko podatki iz opazovalnih ali samodejnih postaj.
 REST senzor se uporablja ker s tem zagotovimo da bo senzor deloval tudi ob dodajanju v XML s strani ponudnika podatkov.
 
