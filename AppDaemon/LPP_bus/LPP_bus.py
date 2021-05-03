@@ -34,7 +34,7 @@ class LPP_bus(hass.Hass):
             station = stationData['busStationName']
             #station name retrieved and sensor prepared
             self.set_state("sensor.lpp" +str(stationID),state=station,\
-                attributes={"friendly_name":str(station)} )
+                attributes={"friendly_name":"Station"} )
 
             for line in self.args["lines"]:
                 #sensors from argument list prepared with default vaues
